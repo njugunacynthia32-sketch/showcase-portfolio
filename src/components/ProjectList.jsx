@@ -3,9 +3,13 @@ import ProjectCard from "./ProjectCard";
 function ProjectList({ projects }) {
   return (
     <div>
-      {projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
+      {projects.length === 0 ? (
+        <p>No projects found</p>
+      ) : (
+        projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))
+      )}
     </div>
   );
 }
